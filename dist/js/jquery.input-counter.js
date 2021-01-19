@@ -55,6 +55,7 @@ jQuery.fn.inputCounter = function (options) {
             var newValue = (parseInt(input.val()) + 1);
 
             me.setValue(element, parseInt(input.val()), newValue);
+            pushToAPI();
             updateSum();
         },
 
@@ -65,6 +66,7 @@ jQuery.fn.inputCounter = function (options) {
             var newValue = (parseInt(input.val()) - 1);
 
             me.setValue(element, parseInt(input.val()), newValue);
+            pushToAPI();
             updateSum();
         },
 
