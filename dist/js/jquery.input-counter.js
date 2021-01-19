@@ -43,9 +43,9 @@ jQuery.fn.inputCounter = function (options) {
             var subtractButtonElement = $($(element).find(settings.selectors.subtractButtonSelector)[0]);
             var input = $($(element).find(settings.selectors.inputSelector)[0]);
 
-            addButtonElement.on("click touchstart", $.proxy(me.onAddButtonClicked, me, element));
-            subtractButtonElement.on("click touchstart", $.proxy(me.onSubtractButtonClicked, me, element));
-            input.on("focusout", $.proxy(me.onInputFocusOut, me, element));
+            addButtonElement.off().on("click", $.proxy(me.onAddButtonClicked, me, element));
+            subtractButtonElement.off().on("click", $.proxy(me.onSubtractButtonClicked, me, element));
+            input.off().on("focusout", $.proxy(me.onInputFocusOut, me, element));
         },
 
         onAddButtonClicked: function (element) {
