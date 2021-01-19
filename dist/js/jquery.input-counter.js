@@ -55,6 +55,7 @@ jQuery.fn.inputCounter = function (options) {
             var newValue = (parseInt(input.val()) + 1);
 
             me.setValue(element, parseInt(input.val()), newValue);
+            updateSum();
         },
 
         onSubtractButtonClicked: function (element) {
@@ -64,6 +65,7 @@ jQuery.fn.inputCounter = function (options) {
             var newValue = (parseInt(input.val()) - 1);
 
             me.setValue(element, parseInt(input.val()), newValue);
+            updateSum();
         },
 
         onInputFocusOut: function (element) {

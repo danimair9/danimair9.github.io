@@ -20,10 +20,12 @@
     </style>
 </head>
 
-<body>
+<body onload="updateSum();" style="background-color: #00BCD4; padding: 70px;">
 
-<div class="position-relative overflow-hidden p-3 p-md-6 m-md-3 text-center bg-light" style="margin-top:150px">
+<div class="position-relative overflow-hidden p-3 p-md-6 m-md-3 text-center bg-light" style="border-radius: 15px;">
     <h1>Trichter Counter</h1>
+    <br>
+    <h2>Gesamt:</h2><h2 id="counter-sum">0</h2>
 
     <div class="col-md-5 p-lg-5 mx-auto my-5">
         <h3>Flo</h3>
@@ -106,7 +108,7 @@
         </div>
         <br />
         <br />
-        <h3>Daniel</h3>
+        <h3>Dani</h3>
         <div class="input-counter input-group">
             <div class="input-group-prepend">
                 <button type="button" class="btn-subtract btn btn-primary">
@@ -165,10 +167,24 @@
         },
     };
 
+    function updateSum(){
+
+        var sum = 0;
+
+        for(i = 0; i<=6 ; i++) {
+            sum += parseInt(document.getElementsByTagName("input")[i].value);
+        }
+        document.getElementById("counter-sum").innerText = sum;
+    }
+
     $(".input-counter").inputCounter(options);
 </script>
-</body>
-<script type="text/javascript">
+<style>
+    .form-control.counter{
+        text-align: center;
+    }
 
-</script>
+
+</style>
+</body>
 </html>
